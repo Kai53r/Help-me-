@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Wiz.png" type="Texture" id=2]
+[ext_resource path="res://Stats.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.2132, 15.105 )
+
+[node name="Stats " type="Node2D"]
+
+[node name="Battlers" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Battlers"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battlers"]
+position = Vector2( 0, 0.149891 )
+shape = SubResource( 1 )
+
+[node name="Stats for Battlers" type="Node2D" parent="."]
+script = ExtResource( 3 )
